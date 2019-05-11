@@ -1,6 +1,7 @@
 // justfy
 @desktop: ~"screen and (min-width: 1200px)";
 @tablet:  ~"screen and (min-width: 940px)";
+@phone:  ~"screen and (max-width: 940px)";
 
 // common
 * {
@@ -106,7 +107,67 @@ main {
       }
     }
     &:nth-child(2) {
-      background-color: rgb(84, 171, 177);
+      background-image: linear-gradient( 135deg, #FD6E6A 10%, #FFC600 100%);
+      &>img {
+        position: absolute;
+        width: 1200px;
+        height: 1200px;
+        z-index:0;
+        opacity: 0.35;
+        left: 33%;
+        top: 20%;
+        .keyframes(
+          fade-in-desktop;{
+            0% {
+              opacity: 0.25;
+              width: 1500px;
+              height: 1500px;
+              left: -10%;
+              top: -55%;
+            }
+            100% {
+              opacity: 0.35;
+              width: 1600px;
+              height: 1600px;
+              left: -15%;
+              top: -65%;
+            }
+          }
+        );
+        .keyframes(
+          fade-in-phone;{
+            0% {
+              opacity: 0.25;
+              width: 1800px;
+              height: 1800px;
+              left: -35%;
+              top: 25%;
+            }
+            100% {
+              opacity: 0.35;
+              width: 1900px;
+              height: 1900px;
+              left: -40%;
+              top: 20%;
+            }
+          }
+        );
+        @media @phone {
+          .animation(
+            fade-in-phone 1.4s ease infinite alternate;
+          )
+        }
+        @media @tablet {
+          .animation(
+            fade-in-phone 1.4s ease infinite alternate;
+          )
+        }
+        @media @desktop {
+          .animation(
+            fade-in-desktop 1.4s ease infinite alternate;
+          )
+        }
+      } 
       .container {
         overflow: hidden;
         position: relative;
@@ -172,59 +233,20 @@ main {
             }
             p {
               font-size: 1.3rem;
+              text-indent: 2rem;
             }
           }
         }
       }
     }
     &:nth-child(3) {
-      background-color: rgb(177, 134, 84);
-      .container {
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        .ticketBox {
-          width: 100%;
-          .ticketRoom {
-            width: 90%;
-            height: 90%;
-            padding: 5%;
-            .ticket {
-              width: 100%;
-              height: 100%;
-              background-image: url("../assets/img/ticket1.png");
-              background-size: cover;
-            }
-          }
-        }
-        .contentsContainer {
-          position: relative;
-          width: 100%;
-          .contents {
-            width: 90%;
-            height: 95%;
-            padding: 5% 5% 0 5%;
-            * {
-              margin-bottom: 2rem;
-              text-align: justify;
-            }
-            h1 {
-              font-size: 2.5rem;
-            }
-            p {
-              font-size: 1.3rem;
-            }
-          }
-        }
-      }
+      background-image: linear-gradient( 135deg, rgb(202, 176, 44) 10%, rgb(177, 39, 39) 100%);
     }
     &:nth-child(4) {
-      
+      background-image: linear-gradient( 135deg, rgb(211, 205, 31) 10%, rgb(68, 172, 27) 100%);
     }
     &:nth-child(5) {
-      
+      background-image: linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%);
     }
   }
   .up {
@@ -246,4 +268,16 @@ main {
       text-shadow: 1px 1px 1px #C9C9C9;
     }
   }
+}
+
+.keyframes(@name; @arguments) {
+	@-moz-keyframes @name { @arguments(); }
+	@-webkit-keyframes @name { @arguments(); }
+	@keyframes @name { @arguments(); }
+}
+
+.animation(@arguments) {
+	-webkit-animation: @arguments;
+	-moz-animation: @arguments;
+	animation: @arguments;
 }
