@@ -4,37 +4,17 @@ $(document).ready(function() {
     var h = window.innerHeight;
     var wh = w / (h * 1920 / 1080);
     commonSizing = function(w, h, wh) {
-        $(".poster>img").css("height", $(".poster>img").width() * (2715 / 1920));
+        $(".poster").css("height", $(".poster").width() * (2715 / 1920));
+        $(".ticket").css("height", $(".ticket").width() * (1181 / 3307));
     }
     pcSizing = function(w, h, wh) {
-        $("#box1, #box1>*").removeAttr("style");
-        if (wh > 1) {
-            $("#box1, #box1>*").css("width", w);
-        }
-        if (wh <= 1) {
-            $("#box1, #box1>*").css("height", h);
-            $(".video1").css("left", (w - (h * 1920 / 1080)) / 2);
-        }
+        $(".fixed>ul").css("width", "800px");
     }
     tabletSizing = function(w, h, wh) {
-        $("#box1, #box1>*").removeAttr("style");
-        if (wh > 1) {
-            $("#box1, #box1>*").css("width", w);
-            $("#box1").css("height", h);
-        }
-        if (wh <= 1) {
-            $("#box1, #box1>*").css("width", "1200px");
-        }
+        $(".fixed>ul").css("width", "800px");
     }
     mobileSizing = function(w, h, wh) {
-        $("#box1, #box1>*").removeAttr("style");
-        if (wh > 1) {
-            $("#box1, #box1>*").css("width", w);
-            $("#box1").css("height", h);
-        }
-        if (wh <= 1) {
-            $("#box1, #box1>*").css("width", "940px");
-        }
+        $(".fixed>ul").css("width", "640px");
     }
     commonSizing(w, h, wh);
     if (w > 1200) {
@@ -44,13 +24,6 @@ $(document).ready(function() {
     } else {
         mobileSizing(w, h, wh);
     }
-    // if (matchMedia("screen and (min-width: 1200px)").matches) {
-    //     pcSizing(w, h, wh);
-    // } else if (matchMedia("screen and (min-width: 940px)").matches) {
-    //     tabletSizing(w, h, wh);
-    // } else {
-    //     mobileSizing(w, h, wh);
-    // }
     window.onresize = function(event) {
         var w = window.innerWidth;
         var h = window.innerHeight;
@@ -63,27 +36,22 @@ $(document).ready(function() {
         } else {
             mobileSizing(w, h, wh);
         }
-        // if (matchMedia("screen and (min-width: 1200px)").matches) {
-        //     pcSizing(w, h, wh);
-        // } else if (matchMedia("screen and (min-width: 940px)").matches) {
-        //     tabletSizing(w, h, wh);
-        // } else {
-        //     mobileSizing(w, h, wh);
-        // }
     };
     // 스크롤 이벤트 정의
     $(window).scroll(function() {
         if ($(window).scrollTop() > 50 ){
             $('.bg_trans').addClass('show');
             $('.fixed').css("height", "80px");
-            $('.fixed ul').css("width", "640px");
+            $('.fixed li').css("color", "#fff");
+            $('.fixed li').css("opacity", "1");
             $('.fixed li').css("font-size", "0.9rem");
             $('.fixed li').css("letter-spacing", "4px");
             $('.fixed li').css("line-height", "80px");
         } else {
             $('.bg_trans').removeClass('show');
             $('.fixed').css("height", "100px");
-            $('.fixed ul').css("width", "800px");
+            $('.fixed li').css("color", "#000");
+            $('.fixed li').css("opacity", "0.8");
             $('.fixed li').css("font-size", "1.1rem");
             $('.fixed li').css("letter-spacing", "3px");
             $('.fixed li').css("line-height", "100px");
@@ -125,5 +93,16 @@ $(document).ready(function() {
     //     $(this).on('ended',function(){
     //         $(this).remove();
     //     });
+    // });
+    // 이미지 전환 이벤트 정의
+    // $('#one').hover(function() {
+
+    //     // increase the 500 to larger values to lengthen the duration of the fadeout 
+    //        // and/or fadein
+    //     $('#one').fadeOut(500, function() {
+    //         $('#one').attr("src","/newImage.png");
+    //         $('#one').fadeIn(500);
+    //     });
+    
     // });
 });
