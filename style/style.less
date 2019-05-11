@@ -1,0 +1,165 @@
+// justfy
+@desktop: ~"screen and (min-width: 1200px)";
+@tablet:  ~"screen and (min-width: 940px)";
+
+// common
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit;
+  text-decoration: none;
+}
+// animation
+.show {
+  opacity: 0.4 !important;
+}
+// inherit
+nav {
+  width: 100%;
+  position: absolute;
+  font-family: 'Trebuchet Ms';
+  .fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 10;
+    transition: all 0.5s ease;
+    ul {
+      position: relative;
+      z-index: 12;
+      height: 100%;
+      margin: 0 auto 0 auto;
+      width: 800px;
+      transition: all 0.5s ease;
+      li {
+        text-align: center;
+        float: left; 
+        width: 20%;
+        height: 100%;
+        list-style: none;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        line-height: 100px;
+        color: #fff;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+    }
+    .bg_trans {
+      position: absolute;
+      top: 0;
+      background: #000;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 11;
+      -webkit-transition: all 1s ease-in-out;
+      -moz-transition: all 1s ease-in-out;
+      -o-transition: all 1s ease-in-out;
+      transition: all 1s ease-in-out;
+    }
+  }
+}
+main {
+  position: relative;
+  // top: 100px;
+  .contentsBox {
+    position: relative;
+    width: 100%;
+    font-size: 2rem;
+    &:nth-child(1) {
+      video {
+        position: relative;
+        z-index: 1;
+      }
+      .darken {
+        position: absolute;
+        z-index: 2;
+        background: #FFF;
+        opacity: 0.4;
+        width: 100%;
+        height: 100%;
+        top: 0;
+      }
+      .contentsContainer {
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        .contents {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          max-width: 640px;
+          background-image: url("../assets/img/second.png");
+          background-size: cover;
+          margin: 0 auto;
+          opacity: 0.75;
+
+        }
+      }
+    }
+    &:nth-child(2) {
+      position: relative;
+      width: 100%;
+      display: block;
+      @media @desktop {
+        display: flex;
+        flex-direction: row;
+      }
+      .poster {
+        width: 70%;
+        margin: 0 auto;
+        @media @desktop {
+          display: flex;
+          flex-direction: row;
+        }
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    &:nth-child(3) {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      div {
+        flex: 1;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    &:nth-child(4) {
+      
+    }
+    &:nth-child(5) {
+      
+    }
+  }
+  .up {
+    text-align: center;
+    height: 300px;
+    line-height: 300px;
+    font-size: 4rem;
+    color: #bdbdbd;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 5px;
+    text-shadow: 1px 1px 1px #949494;
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    display: block;
+    &:hover {
+      color: #a6a6a6;
+      text-shadow: 1px 1px 1px #C9C9C9;
+    }
+  }
+}
