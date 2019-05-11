@@ -31,16 +31,14 @@ nav .fixed ul {
 }
 nav .fixed ul li {
   text-align: center;
-  opacity: 0.8;
   float: left;
   width: 20%;
   height: 100%;
-  font-size: 1.1rem;
   list-style: none;
   text-transform: uppercase;
   letter-spacing: 3px;
   line-height: 100px;
-  color: #000;
+  color: #fff;
   transition: all 0.5s ease;
   cursor: pointer;
 }
@@ -64,12 +62,10 @@ main .contentsBox {
   position: relative;
   width: 100%;
   font-size: 2rem;
-  overflow: hidden;
 }
 main .contentsBox:nth-child(1) video {
   position: relative;
   z-index: 1;
-  display: block;
 }
 main .contentsBox:nth-child(1) .darken {
   position: absolute;
@@ -98,131 +94,42 @@ main .contentsBox:nth-child(1) .contentsContainer .contents {
   opacity: 0.75;
 }
 main .contentsBox:nth-child(2) {
-  background-color: #54abb1;
-}
-main .contentsBox:nth-child(2) .container {
-  overflow: hidden;
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  display: block;
+}
+@media screen and (min-width: 1200px) {
+  main .contentsBox:nth-child(2) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+main .contentsBox:nth-child(2) .poster {
+  width: 70%;
   margin: 0 auto;
 }
-main .contentsBox:nth-child(2) .container .posterBox {
-  width: 60%;
-  margin: 0 auto;
-  float: initial;
-}
-@media screen and (min-width: 940px) {
-  main .contentsBox:nth-child(2) .container .posterBox {
-    width: 80%;
-    margin: 0 auto;
-    float: initial;
-  }
-}
 @media screen and (min-width: 1200px) {
-  main .contentsBox:nth-child(2) .container .posterBox {
-    width: 40%;
-    float: right;
+  main .contentsBox:nth-child(2) .poster {
+    display: flex;
+    flex-direction: row;
   }
 }
-main .contentsBox:nth-child(2) .container .posterBox .posterRoom {
-  width: 80%;
-  height: 80%;
-  padding: 10%;
-}
-main .contentsBox:nth-child(2) .container .posterBox .posterRoom .poster {
+main .contentsBox:nth-child(2) .poster img {
   width: 100%;
-  height: 100%;
-  background-image: url("../assets/img/poster1.jpg");
-  background-size: cover;
-}
-main .contentsBox:nth-child(2) .container .contentsContainer {
-  position: relative;
-  width: 100%;
-  float: initial;
-}
-@media screen and (min-width: 940px) {
-  main .contentsBox:nth-child(2) .container .contentsContainer {
-    width: 100%;
-    float: initial;
-  }
-}
-@media screen and (min-width: 1200px) {
-  main .contentsBox:nth-child(2) .container .contentsContainer {
-    width: 60%;
-    float: right;
-  }
-}
-main .contentsBox:nth-child(2) .container .contentsContainer .contents {
-  width: 80%;
-  height: 90%;
-  padding: 10%;
-  padding-top: 0;
-}
-@media screen and (min-width: 940px) {
-  main .contentsBox:nth-child(2) .container .contentsContainer .contents {
-    height: 90%;
-    padding-top: 0;
-  }
-}
-@media screen and (min-width: 1200px) {
-  main .contentsBox:nth-child(2) .container .contentsContainer .contents {
-    height: 80%;
-    padding-top: 10%;
-  }
-}
-main .contentsBox:nth-child(2) .container .contentsContainer .contents * {
-  margin-bottom: 2rem;
-  text-align: justify;
-}
-main .contentsBox:nth-child(2) .container .contentsContainer .contents h1 {
-  font-size: 2.5rem;
-}
-main .contentsBox:nth-child(2) .container .contentsContainer .contents p {
-  font-size: 1.3rem;
+  height: auto;
 }
 main .contentsBox:nth-child(3) {
-  background-color: #b18654;
-}
-main .contentsBox:nth-child(3) .container {
-  overflow: hidden;
   position: relative;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
 }
-main .contentsBox:nth-child(3) .container .ticketBox {
+main .contentsBox:nth-child(3) div {
+  flex: 1;
+}
+main .contentsBox:nth-child(3) div img {
   width: 100%;
-}
-main .contentsBox:nth-child(3) .container .ticketBox .ticketRoom {
-  width: 90%;
-  height: 90%;
-  padding: 5%;
-}
-main .contentsBox:nth-child(3) .container .ticketBox .ticketRoom .ticket {
-  width: 100%;
-  height: 100%;
-  background-image: url("../assets/img/ticket1.png");
-  background-size: cover;
-}
-main .contentsBox:nth-child(3) .container .contentsContainer {
-  position: relative;
-  width: 100%;
-}
-main .contentsBox:nth-child(3) .container .contentsContainer .contents {
-  width: 90%;
-  height: 95%;
-  padding: 5% 5% 0 5%;
-}
-main .contentsBox:nth-child(3) .container .contentsContainer .contents * {
-  margin-bottom: 2rem;
-  text-align: justify;
-}
-main .contentsBox:nth-child(3) .container .contentsContainer .contents h1 {
-  font-size: 2.5rem;
-}
-main .contentsBox:nth-child(3) .container .contentsContainer .contents p {
-  font-size: 1.3rem;
+  height: auto;
 }
 main .up {
   text-align: center;
