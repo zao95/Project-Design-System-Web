@@ -99,8 +99,9 @@ main .contentsBox:nth-child(1) .contentsContainer .contents {
 }
 main .contentsBox:nth-child(2) {
   background-image: linear-gradient(135deg, #FD6E6A 10%, #FFC600 100%);
+  color: #fff;
 }
-main .contentsBox:nth-child(2) > img {
+main .contentsBox:nth-child(2) .heartIcon {
   position: absolute;
   width: 1200px;
   height: 1200px;
@@ -112,49 +113,49 @@ main .contentsBox:nth-child(2) > img {
 @-moz-keyframes fade-in-desktop {
   0% {
     opacity: 0.25;
-    width: 1500px;
-    height: 1500px;
-    left: -10%;
-    top: -55%;
+    width: 1350px;
+    height: 1350px;
+    left: -8%;
+    top: -40%;
   }
   100% {
     opacity: 0.35;
-    width: 1600px;
-    height: 1600px;
-    left: -15%;
-    top: -65%;
+    width: 1450px;
+    height: 1450px;
+    left: -13%;
+    top: -45%;
   }
 }
 @-webkit-keyframes fade-in-desktop {
   0% {
     opacity: 0.25;
-    width: 1500px;
-    height: 1500px;
-    left: -10%;
-    top: -55%;
+    width: 1350px;
+    height: 1350px;
+    left: -8%;
+    top: -40%;
   }
   100% {
     opacity: 0.35;
-    width: 1600px;
-    height: 1600px;
-    left: -15%;
-    top: -65%;
+    width: 1450px;
+    height: 1450px;
+    left: -13%;
+    top: -45%;
   }
 }
 @keyframes fade-in-desktop {
   0% {
     opacity: 0.25;
-    width: 1500px;
-    height: 1500px;
-    left: -10%;
-    top: -55%;
+    width: 1350px;
+    height: 1350px;
+    left: -8%;
+    top: -40%;
   }
   100% {
     opacity: 0.35;
-    width: 1600px;
-    height: 1600px;
-    left: -15%;
-    top: -65%;
+    width: 1450px;
+    height: 1450px;
+    left: -13%;
+    top: -45%;
   }
 }
 @-moz-keyframes fade-in-phone {
@@ -206,21 +207,21 @@ main .contentsBox:nth-child(2) > img {
   }
 }
 @media screen and (max-width: 940px) {
-  main .contentsBox:nth-child(2) > img {
+  main .contentsBox:nth-child(2) .heartIcon {
     -webkit-animation: fade-in-phone 1.4s ease infinite alternate;
     -moz-animation: fade-in-phone 1.4s ease infinite alternate;
     animation: fade-in-phone 1.4s ease infinite alternate;
   }
 }
 @media screen and (min-width: 940px) {
-  main .contentsBox:nth-child(2) > img {
+  main .contentsBox:nth-child(2) .heartIcon {
     -webkit-animation: fade-in-phone 1.4s ease infinite alternate;
     -moz-animation: fade-in-phone 1.4s ease infinite alternate;
     animation: fade-in-phone 1.4s ease infinite alternate;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .contentsBox:nth-child(2) > img {
+  main .contentsBox:nth-child(2) .heartIcon {
     -webkit-animation: fade-in-desktop 1.4s ease infinite alternate;
     -moz-animation: fade-in-desktop 1.4s ease infinite alternate;
     animation: fade-in-desktop 1.4s ease infinite alternate;
@@ -331,6 +332,7 @@ main .up {
   z-index: 1;
   margin: 0 auto;
   display: block;
+  background-color: #000000;
 }
 main .up:hover {
   color: #a6a6a6;

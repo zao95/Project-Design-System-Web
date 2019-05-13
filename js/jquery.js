@@ -94,6 +94,8 @@ scrollEvent = function() {
 sizeJustify = function() {
     var w = window.innerWidth;
     var h = window.innerHeight;
+    alert(h);
+    // var h = window.innerHeight;
     var wh = w / (h * 1920 / 1080);
     commonSizing = function(w, h, wh) {
         $(".poster").css("height", $(".poster").width() * (2715 / 1920));
