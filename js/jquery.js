@@ -99,8 +99,6 @@ sizeJustify = function() {
     commonSizing = function(w, h, wh) {
         $(".poster").css("height", $(".poster").width() * (2715 / 1920));
         $(".ticket").css("height", $(".ticket").width() * (1181 / 3307));
-        $(".video1").css("height", h);
-        $(".box1>*").css("height", h);
     }
     pcSizing = function(w, h, wh) {
         $(".fixed>ul").css("width", "800px");

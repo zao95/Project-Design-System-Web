@@ -93,10 +93,8 @@ main .contentsBox:nth-child(1) .contentsContainer .contents {
   height: 100%;
   max-width: 640px;
   background-image: url("../assets/img/second.png");
-  background-size: 640px 940px;
   margin: 0 auto;
   opacity: 0.75;
-  padding-bottom: calc(60px);
 }
 main .contentsBox:nth-child(2) {
   background-image: linear-gradient(135deg, #FD6E6A 10%, #FFC600 100%);
