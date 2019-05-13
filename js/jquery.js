@@ -94,12 +94,13 @@ scrollEvent = function() {
 sizeJustify = function() {
     var w = window.innerWidth;
     var h = window.innerHeight;
-    alert(h);
     // var h = window.innerHeight;
     var wh = w / (h * 1920 / 1080);
     commonSizing = function(w, h, wh) {
         $(".poster").css("height", $(".poster").width() * (2715 / 1920));
         $(".ticket").css("height", $(".ticket").width() * (1181 / 3307));
+        $(".video1").css("height", h);
+        $(".box1>*").css("height", h);
     }
     pcSizing = function(w, h, wh) {
         $(".fixed>ul").css("width", "800px");
