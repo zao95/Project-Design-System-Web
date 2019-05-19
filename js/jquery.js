@@ -4,6 +4,7 @@ $(document).ready(function() {
     menuClickScroll();
     scrollEvent();
     personClick();
+    focusEvent();
     videoPlay();
     // 비디오 이벤트 정의
     // $('video').each(function() {
@@ -23,26 +24,6 @@ $(document).ready(function() {
     
     // });
 });
-
-
-personClick = function() {
-    $(".person:nth-child(2)").click(function() {
-        $(".personData").addClass("visible");
-        $(".personData").removeClass("hidden");
-    });
-    $(".cancel").click(function() {
-        $(".personData").addClass("hidden");
-        $(".personData").removeClass("visible");
-    });
-}
-
-
-// 영상 강제 재생 코드
-videoPlay = function() {
-    $(window).load(function(){
-        $(".video1").play();
-    });
-}
 
 
 // 메뉴 클릭 시 이동 이벤트
@@ -149,4 +130,76 @@ sizeJustify = function() {
             mobileSizing(w, h, wh);
         }
     };
+}
+
+
+personClick = function() {
+    $(".person:nth-child(2)").click(function() {
+        $(".personData").addClass("visible");
+        $(".personData").removeClass("hidden");
+    });
+    $(".cancel").click(function() {
+        $(".personData").addClass("hidden");
+        $(".personData").removeClass("visible");
+    });
+}
+
+
+focusEvent = function() {
+    $(".name>input").focus(function() {
+        $(".name").css("font-size", "1.5rem");
+        $(".name>p:nth-child(1)").css("width", "150px");
+        $(".name>p:nth-child(2)").css("width", "25px");
+        $(".name>input").css("fwidth", "450px");
+    });
+    $(".name>input").focusout(function() {
+        $(".name").css("font-size", "1.2rem");
+        $(".name>p:nth-child(1)").css("width", "120px");
+        $(".name>p:nth-child(2)").css("width", "20px");
+        $(".name>input").css("fwidth", "400px");
+    });
+    $(".email>input").focus(function() {
+        $(".email").css("font-size", "1.5rem");
+        $(".email>p:nth-child(1)").css("width", "150px");
+        $(".email>p:nth-child(2)").css("width", "25px");
+        $(".email>input").css("fwidth", "450px");
+    });
+    $(".email>input").focusout(function() {
+        $(".email").css("font-size", "1.2rem");
+        $(".email>p:nth-child(1)").css("width", "120px");
+        $(".email>p:nth-child(2)").css("width", "20px");
+        $(".email>input").css("fwidth", "400px");
+    });
+    $(".phone>input").focus(function() {
+        $(".phone").css("font-size", "1.5rem");
+        $(".phone>p:nth-child(1)").css("width", "150px");
+        $(".phone>p:nth-child(2)").css("width", "25px");
+        $(".phone>input").css("fwidth", "450px");
+    });
+    $(".phone>input").focusout(function() {
+        $(".phone").css("font-size", "1.2rem");
+        $(".phone>p:nth-child(1)").css("width", "120px");
+        $(".phone>p:nth-child(2)").css("width", "20px");
+        $(".phone>input").css("fwidth", "400px");
+    });
+    $(".company>input").focus(function() {
+        $(".company").css("font-size", "1.5rem");
+        $(".company>p:nth-child(1)").css("width", "150px");
+        $(".company>p:nth-child(2)").css("width", "25px");
+        $(".company>input").css("fwidth", "450px");
+    });
+    $(".company>input").focusout(function() {
+        $(".company").css("font-size", "1.2rem");
+        $(".company>p:nth-child(1)").css("width", "120px");
+        $(".company>p:nth-child(2)").css("width", "20px");
+        $(".company>input").css("fwidth", "400px");
+    });
+}
+
+
+// 영상 강제 재생 코드
+videoPlay = function() {
+    $(window).load(function(){
+        $(".video1").play();
+    });
 }

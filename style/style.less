@@ -89,7 +89,7 @@ nav {
 main {
   position: relative;
   // top: 100px;
-  .contentsBox {
+  >div {
     position: relative;
     width: 100%;
     font-size: 2rem;
@@ -273,10 +273,11 @@ main {
         flex-direction: row;
         align-items: flex-start;
         justify-content: center;
+        margin-bottom: 30px;
         .introduction {
           width: 100%;
           text-align: center;
-          padding: 20px 0 0 0;
+          padding: 30px 0 0 0;
           color: @color1;
           h1 {
             padding: 0 10px 5px 10px;
@@ -576,14 +577,14 @@ main {
         .keyframes(
           fade-in-desktop;{
             0% {
-              opacity: 0.05;
+              opacity: 0.15;
               width: 100%;
               height: 1200px;
               left: 0;
               top: -70%;
             }
             100% {
-              opacity: 0.20;
+              opacity: 0.25;
               width: 100%;
               height: 1200px;
               left: 0;
@@ -594,14 +595,14 @@ main {
         .keyframes(
           fade-in-phone;{
             0% {
-              opacity: 0.05;
+              opacity: 0.15;
               width: 1200px;
               height: 1200px;
               left: 0;
               top: 0;
             }
             100% {
-              opacity: 0.20;
+              opacity: 0.25;
               width: 1200px;
               height: 1200px;
               left: 0;
@@ -695,9 +696,195 @@ main {
         }
       }
     }
-    // APPLY
+    // REVIEWS
     &:nth-child(5) {
+      background-image: linear-gradient( 135deg, @color5 10%, @color9 100%);
+      .container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        width: 100%;
+        margin: 30px auto;
+        .title {
+          font-size: 3rem;
+          display: inline-block;
+          margin: 0 auto;
+        }
+        .logo {
+          display: inline-block;
+          width: 200px;
+          height: 100px;
+          background-image: url(../assets/img/companyLogo/reviewLogo.PNG);
+          background-size: cover;
+          margin: 30px auto;
+        }
+        .contents {
+          font-size: 1.4rem;
+          font-weight: 300;
+          display: inline-block;
+          margin: 0 auto;
+        }
+        .author {
+          font-size: 1.4rem;
+          font-weight: 300;
+          display: inline-block;
+          margin: 20px auto 20px auto;
+        }
+        .dot {
+          font-size: 1rem;
+          display: inline-block;
+          margin: 30px auto 20px auto;
+        }        
+      }
+    }
+    // APPLY
+    &:nth-child(6) {
       background-image: linear-gradient( 135deg, @color1 10%, @color2 100%);
+      .container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        width: 100%;
+        margin: 30px auto;
+        color: @color9;
+        .title {
+          font-size: 2.4rem;
+          display: inline-block;
+          margin: 20px auto 50px auto;
+          @media @tablet {
+            font-size: 3rem;
+          }
+        }
+        .name {
+          font-size: 1.2rem;
+          font-weight: 200;
+          display: flex;
+          margin: 15px auto;
+          transition: 0.6s ease;
+          input {
+            width: 400px;
+            background-color: rgba(0, 0, 0, 0);
+            border: none;
+            border-bottom: solid 2px @color9;
+            transition: 0.6s ease;
+            color: @color9;
+            &:focus {
+              border-bottom: solid 1px @color9;
+            }
+          }
+          p {
+            flex: 1;
+            transition: 0.6s ease;
+            &:nth-child(1) {
+              min-width: 120px;
+            }
+            &:nth-child(2) {
+              min-width: 20px;
+            }
+          }
+        }
+        .email {
+          font-size: 1.2rem;
+          font-weight: 200;
+          display: flex;
+          margin: 15px auto;
+          transition: 0.6s ease;
+          input {
+            width: 400px;
+            background-color: rgba(0, 0, 0, 0);
+            border: none;
+            border-bottom: solid 2px @color9;
+            transition: 0.6s ease;
+            color: @color9;
+            &:focus {
+              border-bottom: solid 1px @color9;
+            }
+          }
+          p {
+            flex: 1;
+            transition: 0.6s ease;
+            &:nth-child(1) {
+              min-width: 120px;
+            }
+            &:nth-child(2) {
+              min-width: 20px;
+            }
+          }
+        }
+        .phone {
+          font-size: 1.2rem;
+          font-weight: 200;
+          display: flex;
+          margin: 15px auto;
+          transition: 0.6s ease;
+          input {
+            width: 400px;
+            background-color: rgba(0, 0, 0, 0);
+            border: none;
+            border-bottom: solid 2px @color9;
+            transition: 0.6s ease;
+            color: @color9;
+            &:focus {
+              border-bottom: solid 1px @color9;
+            }
+          }
+          p {
+            flex: 1;
+            transition: 0.6s ease;
+            &:nth-child(1) {
+              min-width: 120px;
+            }
+            &:nth-child(2) {
+              min-width: 20px;
+            }
+          }
+        }
+        .company {
+          font-size: 1.2rem;
+          font-weight: 200;
+          display: flex;
+          margin: 15px auto;
+          transition: 0.6s ease;
+          input {
+            width: 400px;
+            background-color: rgba(0, 0, 0, 0);
+            border: none;
+            border-bottom: solid 2px @color9;
+            transition: 0.6s ease;
+            color: @color9;
+            &:focus {
+              border-bottom: solid 1px @color9;
+            }
+          }
+          p {
+            flex: 1;
+            transition: 0.6s ease;
+            &:nth-child(1) {
+              min-width: 120px;
+            }
+            &:nth-child(2) {
+              min-width: 20px;
+            }
+          }
+        }
+        .apply {
+          font-size: 1.6rem;
+          font-weight: 500;
+          display: inline-block;
+          margin: 40px auto 20px auto;
+          padding: 0 10px 8px 10px;
+          border: solid 2px @color8;
+          cursor: pointer;
+          transition: 0.4s ease;
+          &:hover {
+            background-color: @color2
+          }
+        }        
+      }
     }
   }
   .up {

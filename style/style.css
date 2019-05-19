@@ -68,18 +68,18 @@ nav .fixed .bg_trans {
 main {
   position: relative;
 }
-main .contentsBox {
+main > div {
   position: relative;
   width: 100%;
   font-size: 2rem;
   overflow: hidden;
 }
-main .contentsBox:nth-child(1) video {
+main > div:nth-child(1) video {
   position: relative;
   z-index: 1;
   display: block;
 }
-main .contentsBox:nth-child(1) .darken {
+main > div:nth-child(1) .darken {
   position: absolute;
   z-index: 2;
   background: #FFF;
@@ -88,14 +88,14 @@ main .contentsBox:nth-child(1) .darken {
   height: 100%;
   top: 0;
 }
-main .contentsBox:nth-child(1) .contentsContainer {
+main > div:nth-child(1) .contentsContainer {
   position: absolute;
   z-index: 3;
   width: 100%;
   height: 100%;
   top: 0;
 }
-main .contentsBox:nth-child(1) .contentsContainer .contents {
+main > div:nth-child(1) .contentsContainer .contents {
   position: relative;
   width: 100%;
   height: 100%;
@@ -104,11 +104,11 @@ main .contentsBox:nth-child(1) .contentsContainer .contents {
   margin: 0 auto;
   opacity: 0.75;
 }
-main .contentsBox:nth-child(2) {
+main > div:nth-child(2) {
   background-image: linear-gradient(135deg, #1d1d1d 10%, #3d3d3d 100%);
   color: #fff;
 }
-main .contentsBox:nth-child(2) .Icon {
+main > div:nth-child(2) .Icon {
   position: absolute;
   width: 1200px;
   height: 1200px;
@@ -214,127 +214,128 @@ main .contentsBox:nth-child(2) .Icon {
   }
 }
 @media screen and (max-width: 940px) {
-  main .contentsBox:nth-child(2) .Icon {
+  main > div:nth-child(2) .Icon {
     -webkit-animation: fade-in-phone 2s ease-in-out infinite alternate;
     -moz-animation: fade-in-phone 2s ease-in-out infinite alternate;
     animation: fade-in-phone 2s ease-in-out infinite alternate;
   }
 }
 @media screen and (min-width: 940px) {
-  main .contentsBox:nth-child(2) .Icon {
+  main > div:nth-child(2) .Icon {
     -webkit-animation: fade-in-phone 2s ease-in-out infinite alternate;
     -moz-animation: fade-in-phone 2s ease-in-out infinite alternate;
     animation: fade-in-phone 2s ease-in-out infinite alternate;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .contentsBox:nth-child(2) .Icon {
+  main > div:nth-child(2) .Icon {
     -webkit-animation: fade-in-desktop 2s ease-in-out infinite alternate;
     -moz-animation: fade-in-desktop 2s ease-in-out infinite alternate;
     animation: fade-in-desktop 2s ease-in-out infinite alternate;
   }
 }
-main .contentsBox:nth-child(2) .container {
+main > div:nth-child(2) .container {
   overflow: hidden;
   position: relative;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
-main .contentsBox:nth-child(2) .container .posterBox {
+main > div:nth-child(2) .container .posterBox {
   width: 60%;
   margin: 0 auto;
   float: initial;
 }
 @media screen and (min-width: 940px) {
-  main .contentsBox:nth-child(2) .container .posterBox {
+  main > div:nth-child(2) .container .posterBox {
     width: 80%;
     margin: 0 auto;
     float: initial;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .contentsBox:nth-child(2) .container .posterBox {
+  main > div:nth-child(2) .container .posterBox {
     width: 40%;
     float: right;
   }
 }
-main .contentsBox:nth-child(2) .container .posterBox .posterRoom {
+main > div:nth-child(2) .container .posterBox .posterRoom {
   width: 80%;
   height: 80%;
   padding: 10%;
 }
-main .contentsBox:nth-child(2) .container .posterBox .posterRoom .poster {
+main > div:nth-child(2) .container .posterBox .posterRoom .poster {
   width: 100%;
   height: 100%;
   background-image: url("../assets/img/poster1.jpg");
   background-size: cover;
   box-shadow: 0 0 10px #000;
 }
-main .contentsBox:nth-child(2) .container .contentsContainer {
+main > div:nth-child(2) .container .contentsContainer {
   position: relative;
   width: 100%;
   float: initial;
 }
 @media screen and (min-width: 940px) {
-  main .contentsBox:nth-child(2) .container .contentsContainer {
+  main > div:nth-child(2) .container .contentsContainer {
     width: 100%;
     float: initial;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .contentsBox:nth-child(2) .container .contentsContainer {
+  main > div:nth-child(2) .container .contentsContainer {
     width: 60%;
     float: right;
   }
 }
-main .contentsBox:nth-child(2) .container .contentsContainer .contents {
+main > div:nth-child(2) .container .contentsContainer .contents {
   width: 80%;
   height: 90%;
   padding: 10%;
   padding-top: 0;
 }
 @media screen and (min-width: 940px) {
-  main .contentsBox:nth-child(2) .container .contentsContainer .contents {
+  main > div:nth-child(2) .container .contentsContainer .contents {
     height: 90%;
     padding-top: 0;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .contentsBox:nth-child(2) .container .contentsContainer .contents {
+  main > div:nth-child(2) .container .contentsContainer .contents {
     height: 80%;
     padding-top: 10%;
   }
 }
-main .contentsBox:nth-child(2) .container .contentsContainer .contents * {
+main > div:nth-child(2) .container .contentsContainer .contents * {
   margin-bottom: 2rem;
   text-align: justify;
 }
-main .contentsBox:nth-child(2) .container .contentsContainer .contents h1 {
+main > div:nth-child(2) .container .contentsContainer .contents h1 {
   font-size: 2.5rem;
 }
-main .contentsBox:nth-child(2) .container .contentsContainer .contents p {
+main > div:nth-child(2) .container .contentsContainer .contents p {
   font-size: 1.3rem;
   text-indent: 2rem;
 }
-main .contentsBox:nth-child(3) {
+main > div:nth-child(3) {
   background-image: linear-gradient(135deg, #979797 10%, #ffffff 100%);
 }
-main .contentsBox:nth-child(3) .container {
+main > div:nth-child(3) .container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
+  margin-bottom: 30px;
 }
-main .contentsBox:nth-child(3) .container .introduction {
+main > div:nth-child(3) .container .introduction {
   width: 100%;
   text-align: center;
-  padding: 20px 0 0 0;
+  padding: 30px 0 0 0;
   color: #000000;
 }
-main .contentsBox:nth-child(3) .container .introduction h1 {
+main > div:nth-child(3) .container .introduction h1 {
   padding: 0 10px 5px 10px;
   overflow: hidden;
   position: relative;
@@ -343,17 +344,17 @@ main .contentsBox:nth-child(3) .container .introduction h1 {
   font-size: 3rem;
 }
 @media screen and (min-width: 940px) {
-  main .contentsBox:nth-child(3) .container .introduction h1 {
+  main > div:nth-child(3) .container .introduction h1 {
     font-size: 4rem;
   }
 }
-main .contentsBox:nth-child(3) .container .person {
+main > div:nth-child(3) .container .person {
   width: 150px;
   height: 150px;
   margin: 20px;
   cursor: pointer;
 }
-main .contentsBox:nth-child(3) .container .person:before {
+main > div:nth-child(3) .container .person:before {
   content: "";
   z-index: 1;
   opacity: 0;
@@ -365,176 +366,176 @@ main .contentsBox:nth-child(3) .container .person:before {
   box-shadow: 0 0 15px #fff;
   transition: 0.3s ease;
 }
-main .contentsBox:nth-child(3) .container .person:hover:before {
+main > div:nth-child(3) .container .person:hover:before {
   opacity: 0.3;
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(2) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(2) div.personPicture {
   background-image: url(../assets/img/person/person01.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(2) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(2) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com01.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(3) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(3) div.personPicture {
   background-image: url(../assets/img/person/person02.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(3) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(3) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com02.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(4) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(4) div.personPicture {
   background-image: url(../assets/img/person/person03.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(4) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(4) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com03.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(5) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(5) div.personPicture {
   background-image: url(../assets/img/person/person04.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(5) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(5) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com04.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(6) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(6) div.personPicture {
   background-image: url(../assets/img/person/person05.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(6) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(6) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com05.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(7) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(7) div.personPicture {
   background-image: url(../assets/img/person/person06.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(7) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(7) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com06.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(8) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(8) div.personPicture {
   background-image: url(../assets/img/person/person07.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(8) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(8) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com07.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(9) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(9) div.personPicture {
   background-image: url(../assets/img/person/person08.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(9) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(9) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com08.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(10) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(10) div.personPicture {
   background-image: url(../assets/img/person/person09.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(10) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(10) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com09.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(11) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(11) div.personPicture {
   background-image: url(../assets/img/person/person10.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(11) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(11) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com10.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(12) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(12) div.personPicture {
   background-image: url(../assets/img/person/person01.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(12) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(12) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com01.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(13) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(13) div.personPicture {
   background-image: url(../assets/img/person/person02.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(13) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(13) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com02.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(14) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(14) div.personPicture {
   background-image: url(../assets/img/person/person03.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(14) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(14) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com03.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(15) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(15) div.personPicture {
   background-image: url(../assets/img/person/person04.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(15) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(15) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com04.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(16) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(16) div.personPicture {
   background-image: url(../assets/img/person/person05.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(16) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(16) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com05.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(17) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(17) div.personPicture {
   background-image: url(../assets/img/person/person06.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(17) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(17) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com06.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(18) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(18) div.personPicture {
   background-image: url(../assets/img/person/person07.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(18) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(18) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com07.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(19) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(19) div.personPicture {
   background-image: url(../assets/img/person/person08.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(19) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(19) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com08.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(20) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(20) div.personPicture {
   background-image: url(../assets/img/person/person09.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(20) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(20) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com09.png);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(21) div.personPicture {
+main > div:nth-child(3) .container .person:nth-child(21) div.personPicture {
   background-image: url(../assets/img/person/person10.jpg);
 }
-main .contentsBox:nth-child(3) .container .person:nth-child(21) div.companyLogo {
+main > div:nth-child(3) .container .person:nth-child(21) div.companyLogo {
   background-image: url(../assets/img/companyLogo/com10.png);
 }
-main .contentsBox:nth-child(3) .container .person div {
+main > div:nth-child(3) .container .person div {
   border-radius: 50%;
   background-size: cover;
   background-repeat: no-repeat;
   float: left;
 }
-main .contentsBox:nth-child(3) .container .person div.personPictureRoom {
+main > div:nth-child(3) .container .person div.personPictureRoom {
   margin: 20px 5px 15px 0;
   width: 50px;
   height: 50px;
   border: solid 2px #3d3d3d;
 }
-main .contentsBox:nth-child(3) .container .person div.personPictureRoom .personPicture {
+main > div:nth-child(3) .container .person div.personPictureRoom .personPicture {
   border: none;
   width: 80%;
   height: 80%;
   padding: 10%;
 }
-main .contentsBox:nth-child(3) .container .person div.companyLogoRoom {
+main > div:nth-child(3) .container .person div.companyLogoRoom {
   width: 70px;
   height: 70px;
   border: solid 2px #1d1d1d;
 }
-main .contentsBox:nth-child(3) .container .person div.companyLogoRoom .companyLogo {
+main > div:nth-child(3) .container .person div.companyLogoRoom .companyLogo {
   border: none;
   width: 80%;
   height: 80%;
   padding: 10%;
 }
-main .contentsBox:nth-child(3) .container .person p {
+main > div:nth-child(3) .container .person p {
   clear: both;
   font-size: 0.8rem;
   line-height: 0.8rem;
   margin-bottom: 0.3rem;
   text-align: left;
 }
-main .contentsBox:nth-child(3) .container .person p.name {
+main > div:nth-child(3) .container .person p.name {
   font-weight: bold;
 }
-main .contentsBox:nth-child(3) .container .person p.company {
+main > div:nth-child(3) .container .person p.company {
   font-weight: bold;
 }
-main .contentsBox:nth-child(4) {
+main > div:nth-child(4) {
   background-image: linear-gradient(135deg, #1d1d1d 10%, #3d3d3d 100%);
   color: #fff;
 }
-main .contentsBox:nth-child(4) .Icon {
+main > div:nth-child(4) .Icon {
   position: absolute;
   width: 100%;
   height: 1200px;
@@ -544,14 +545,14 @@ main .contentsBox:nth-child(4) .Icon {
 }
 @-moz-keyframes fade-in-desktop {
   0% {
-    opacity: 0.05;
+    opacity: 0.15;
     width: 100%;
     height: 1200px;
     left: 0;
     top: -70%;
   }
   100% {
-    opacity: 0.20;
+    opacity: 0.25;
     width: 100%;
     height: 1200px;
     left: 0;
@@ -560,14 +561,14 @@ main .contentsBox:nth-child(4) .Icon {
 }
 @-webkit-keyframes fade-in-desktop {
   0% {
-    opacity: 0.05;
+    opacity: 0.15;
     width: 100%;
     height: 1200px;
     left: 0;
     top: -70%;
   }
   100% {
-    opacity: 0.20;
+    opacity: 0.25;
     width: 100%;
     height: 1200px;
     left: 0;
@@ -576,14 +577,14 @@ main .contentsBox:nth-child(4) .Icon {
 }
 @keyframes fade-in-desktop {
   0% {
-    opacity: 0.05;
+    opacity: 0.15;
     width: 100%;
     height: 1200px;
     left: 0;
     top: -70%;
   }
   100% {
-    opacity: 0.20;
+    opacity: 0.25;
     width: 100%;
     height: 1200px;
     left: 0;
@@ -592,14 +593,14 @@ main .contentsBox:nth-child(4) .Icon {
 }
 @-moz-keyframes fade-in-phone {
   0% {
-    opacity: 0.05;
+    opacity: 0.15;
     width: 1200px;
     height: 1200px;
     left: 0;
     top: 0;
   }
   100% {
-    opacity: 0.20;
+    opacity: 0.25;
     width: 1200px;
     height: 1200px;
     left: 0;
@@ -608,14 +609,14 @@ main .contentsBox:nth-child(4) .Icon {
 }
 @-webkit-keyframes fade-in-phone {
   0% {
-    opacity: 0.05;
+    opacity: 0.15;
     width: 1200px;
     height: 1200px;
     left: 0;
     top: 0;
   }
   100% {
-    opacity: 0.20;
+    opacity: 0.25;
     width: 1200px;
     height: 1200px;
     left: 0;
@@ -624,14 +625,14 @@ main .contentsBox:nth-child(4) .Icon {
 }
 @keyframes fade-in-phone {
   0% {
-    opacity: 0.05;
+    opacity: 0.15;
     width: 1200px;
     height: 1200px;
     left: 0;
     top: 0;
   }
   100% {
-    opacity: 0.20;
+    opacity: 0.25;
     width: 1200px;
     height: 1200px;
     left: 0;
@@ -639,27 +640,27 @@ main .contentsBox:nth-child(4) .Icon {
   }
 }
 @media screen and (max-width: 940px) {
-  main .contentsBox:nth-child(4) .Icon {
+  main > div:nth-child(4) .Icon {
     -webkit-animation: fade-in-phone 2s ease-in-out infinite alternate;
     -moz-animation: fade-in-phone 2s ease-in-out infinite alternate;
     animation: fade-in-phone 2s ease-in-out infinite alternate;
   }
 }
 @media screen and (min-width: 940px) {
-  main .contentsBox:nth-child(4) .Icon {
+  main > div:nth-child(4) .Icon {
     -webkit-animation: fade-in-phone 2s ease-in-out infinite alternate;
     -moz-animation: fade-in-phone 2s ease-in-out infinite alternate;
     animation: fade-in-phone 2s ease-in-out infinite alternate;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .contentsBox:nth-child(4) .Icon {
+  main > div:nth-child(4) .Icon {
     -webkit-animation: fade-in-desktop 2s ease-in-out infinite alternate;
     -moz-animation: fade-in-desktop 2s ease-in-out infinite alternate;
     animation: fade-in-desktop 2s ease-in-out infinite alternate;
   }
 }
-main .contentsBox:nth-child(4) .container {
+main > div:nth-child(4) .container {
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -667,79 +668,266 @@ main .contentsBox:nth-child(4) .container {
   margin: 0 auto;
 }
 @media screen and (min-width: 940px) {
-  main .contentsBox:nth-child(4) .container {
+  main > div:nth-child(4) .container {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
   }
 }
-main .contentsBox:nth-child(4) .container .mapBox {
+main > div:nth-child(4) .container .mapBox {
   width: 60%;
   margin: 0 auto;
   float: initial;
 }
 @media screen and (min-width: 940px) {
-  main .contentsBox:nth-child(4) .container .mapBox {
+  main > div:nth-child(4) .container .mapBox {
     width: 80%;
     margin: 0 auto;
     flex: 4;
   }
 }
-main .contentsBox:nth-child(4) .container .mapBox .mapRoom {
+main > div:nth-child(4) .container .mapBox .mapRoom {
   width: 80%;
   height: 80%;
   padding: 10%;
 }
-main .contentsBox:nth-child(4) .container .mapBox .mapRoom .map {
+main > div:nth-child(4) .container .mapBox .mapRoom .map {
   width: 100%;
   height: 100%;
   background-image: url("../assets/img/map.png");
   background-size: cover;
   box-shadow: 0 0 10px #000;
 }
-main .contentsBox:nth-child(4) .container .contentsContainer {
+main > div:nth-child(4) .container .contentsContainer {
   position: relative;
   width: 100%;
   float: initial;
 }
 @media screen and (min-width: 940px) {
-  main .contentsBox:nth-child(4) .container .contentsContainer {
+  main > div:nth-child(4) .container .contentsContainer {
     width: 100%;
     flex: 6;
   }
 }
-main .contentsBox:nth-child(4) .container .contentsContainer .contents {
+main > div:nth-child(4) .container .contentsContainer .contents {
   width: 80%;
   height: 90%;
   padding: 5% 10%;
   padding-top: 0;
 }
 @media screen and (min-width: 940px) {
-  main .contentsBox:nth-child(4) .container .contentsContainer .contents {
+  main > div:nth-child(4) .container .contentsContainer .contents {
     height: 90%;
     padding: 5% 10%;
   }
 }
 @media screen and (min-width: 1200px) {
-  main .contentsBox:nth-child(4) .container .contentsContainer .contents {
+  main > div:nth-child(4) .container .contentsContainer .contents {
     height: 90%;
     padding: 5% 10%;
   }
 }
-main .contentsBox:nth-child(4) .container .contentsContainer .contents * {
+main > div:nth-child(4) .container .contentsContainer .contents * {
   text-align: left;
 }
-main .contentsBox:nth-child(4) .container .contentsContainer .contents h1 {
+main > div:nth-child(4) .container .contentsContainer .contents h1 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
 }
-main .contentsBox:nth-child(4) .container .contentsContainer .contents p {
+main > div:nth-child(4) .container .contentsContainer .contents p {
   font-size: 1.3rem;
   margin-bottom: 0.85rem;
 }
-main .contentsBox:nth-child(5) {
+main > div:nth-child(5) {
+  background-image: linear-gradient(135deg, #979797 10%, #ffffff 100%);
+}
+main > div:nth-child(5) .container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  margin: 30px auto;
+}
+main > div:nth-child(5) .container .title {
+  font-size: 3rem;
+  display: inline-block;
+  margin: 0 auto;
+}
+main > div:nth-child(5) .container .logo {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  background-image: url(../assets/img/companyLogo/reviewLogo.PNG);
+  background-size: cover;
+  margin: 30px auto;
+}
+main > div:nth-child(5) .container .contents {
+  font-size: 1.4rem;
+  font-weight: 300;
+  display: inline-block;
+  margin: 0 auto;
+}
+main > div:nth-child(5) .container .author {
+  font-size: 1.4rem;
+  font-weight: 300;
+  display: inline-block;
+  margin: 20px auto 20px auto;
+}
+main > div:nth-child(5) .container .dot {
+  font-size: 1rem;
+  display: inline-block;
+  margin: 30px auto 20px auto;
+}
+main > div:nth-child(6) {
   background-image: linear-gradient(135deg, #000000 10%, #1d1d1d 100%);
+}
+main > div:nth-child(6) .container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  margin: 30px auto;
+  color: #ffffff;
+}
+main > div:nth-child(6) .container .title {
+  font-size: 2.4rem;
+  display: inline-block;
+  margin: 20px auto 50px auto;
+}
+@media screen and (min-width: 940px) {
+  main > div:nth-child(6) .container .title {
+    font-size: 3rem;
+  }
+}
+main > div:nth-child(6) .container .name {
+  font-size: 1.2rem;
+  font-weight: 200;
+  display: flex;
+  margin: 15px auto;
+  transition: 0.6s ease;
+}
+main > div:nth-child(6) .container .name input {
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: solid 2px #ffffff;
+  transition: 0.6s ease;
+  color: #ffffff;
+}
+main > div:nth-child(6) .container .name input:focus {
+  border-bottom: solid 1px #ffffff;
+}
+main > div:nth-child(6) .container .name p {
+  flex: 1;
+  transition: 0.6s ease;
+}
+main > div:nth-child(6) .container .name p:nth-child(1) {
+  min-width: 120px;
+}
+main > div:nth-child(6) .container .name p:nth-child(2) {
+  min-width: 20px;
+}
+main > div:nth-child(6) .container .email {
+  font-size: 1.2rem;
+  font-weight: 200;
+  display: flex;
+  margin: 15px auto;
+  transition: 0.6s ease;
+}
+main > div:nth-child(6) .container .email input {
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: solid 2px #ffffff;
+  transition: 0.6s ease;
+  color: #ffffff;
+}
+main > div:nth-child(6) .container .email input:focus {
+  border-bottom: solid 1px #ffffff;
+}
+main > div:nth-child(6) .container .email p {
+  flex: 1;
+  transition: 0.6s ease;
+}
+main > div:nth-child(6) .container .email p:nth-child(1) {
+  min-width: 120px;
+}
+main > div:nth-child(6) .container .email p:nth-child(2) {
+  min-width: 20px;
+}
+main > div:nth-child(6) .container .phone {
+  font-size: 1.2rem;
+  font-weight: 200;
+  display: flex;
+  margin: 15px auto;
+  transition: 0.6s ease;
+}
+main > div:nth-child(6) .container .phone input {
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: solid 2px #ffffff;
+  transition: 0.6s ease;
+  color: #ffffff;
+}
+main > div:nth-child(6) .container .phone input:focus {
+  border-bottom: solid 1px #ffffff;
+}
+main > div:nth-child(6) .container .phone p {
+  flex: 1;
+  transition: 0.6s ease;
+}
+main > div:nth-child(6) .container .phone p:nth-child(1) {
+  min-width: 120px;
+}
+main > div:nth-child(6) .container .phone p:nth-child(2) {
+  min-width: 20px;
+}
+main > div:nth-child(6) .container .company {
+  font-size: 1.2rem;
+  font-weight: 200;
+  display: flex;
+  margin: 15px auto;
+  transition: 0.6s ease;
+}
+main > div:nth-child(6) .container .company input {
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: solid 2px #ffffff;
+  transition: 0.6s ease;
+  color: #ffffff;
+}
+main > div:nth-child(6) .container .company input:focus {
+  border-bottom: solid 1px #ffffff;
+}
+main > div:nth-child(6) .container .company p {
+  flex: 1;
+  transition: 0.6s ease;
+}
+main > div:nth-child(6) .container .company p:nth-child(1) {
+  min-width: 120px;
+}
+main > div:nth-child(6) .container .company p:nth-child(2) {
+  min-width: 20px;
+}
+main > div:nth-child(6) .container .apply {
+  font-size: 1.6rem;
+  font-weight: 500;
+  display: inline-block;
+  margin: 40px auto 20px auto;
+  padding: 0 10px 8px 10px;
+  border: solid 2px #eeeeee;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+main > div:nth-child(6) .container .apply:hover {
+  background-color: #1d1d1d;
 }
 main .up {
   text-align: center;
