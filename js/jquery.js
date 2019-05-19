@@ -1,9 +1,10 @@
-
 // 메인 코드
 $(document).ready(function() {
     sizeJustify();
     menuClickScroll();
     scrollEvent();
+    personClick();
+    videoPlay();
     // 비디오 이벤트 정의
     // $('video').each(function() {
     //     $(this).on('ended',function(){
@@ -24,10 +25,24 @@ $(document).ready(function() {
 });
 
 
+personClick = function() {
+    $(".person:nth-child(2)").click(function() {
+        $(".personData").addClass("visible");
+        $(".personData").removeClass("hidden");
+    });
+    $(".cancel").click(function() {
+        $(".personData").addClass("hidden");
+        $(".personData").removeClass("visible");
+    });
+}
+
+
 // 영상 강제 재생 코드
-jQuery.event.add(window,"load",function(){
-    $(".video1").play();
-});
+videoPlay = function() {
+    $(window).load(function(){
+        $(".video1").play();
+    });
+}
 
 
 // 메뉴 클릭 시 이동 이벤트
@@ -98,16 +113,20 @@ sizeJustify = function() {
     var wh = w / (h * 1920 / 1080);
     commonSizing = function(w, h, wh) {
         $(".poster").css("height", $(".poster").width() * (2715 / 1920));
+        $(".map").css("height", $(".map").width());
         $(".ticket").css("height", $(".ticket").width() * (1181 / 3307));
     }
     pcSizing = function(w, h, wh) {
         $(".fixed>ul").css("width", "800px");
+        $(".personData").css("width", w-100);
     }
     tabletSizing = function(w, h, wh) {
         $(".fixed>ul").css("width", "800px");
+        $(".personData").css("width", w-100);
     }
     mobileSizing = function(w, h, wh) {
         $(".fixed>ul").css("width", "640px");
+        $(".personData").css("width", w);
     }
     commonSizing(w, h, wh);
     if (w > 1200) {
