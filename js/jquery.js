@@ -6,24 +6,61 @@ $(document).ready(function() {
     personClick();
     focusEvent();
     videoPlay();
-    // 비디오 이벤트 정의
-    // $('video').each(function() {
-    //     $(this).on('ended',function(){
-    //         $(this).remove();
-    //     });
-    // });
-    // 이미지 전환 이벤트 정의
-    // $('#one').hover(function() {
-
-    //     // increase the 500 to larger values to lengthen the duration of the fadeout 
-    //        // and/or fadein
-    //     $('#one').fadeOut(500, function() {
-    //         $('#one').attr("src","/newImage.png");
-    //         $('#one').fadeIn(500);
-    //     });
-    
-    // });
+    imageChange();
+    apply();
 });
+
+
+// 요소 사이즈 정의
+sizeJustify = function() {
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    // var h = window.innerHeight;
+    var wh = w / (h * 1920 / 1080);
+    commonSizing = function(w, h, wh) {
+        $("#box1").css("height", $("#box1").width() * (1080 / 1920));
+        $("#box1>.contentsContainer").css("height", $("#box1").width() * (1080 / 1920));
+        $("#box1>.contentsContainer>.contents").css("width", $(".contentsContainer>.contents").height() * (960 / 1617));
+        $(".poster").css("height", $(".poster").width() * (2715 / 1920));
+        $(".map").css("height", $(".map").width());
+        $(".ticket").css("height", $(".ticket").width() * (1181 / 3307));
+    }
+    pcSizing = function(w, h, wh) {
+        $(".fixed>ul").css("width", "800px");
+        $(".personData").css("width", w-100);
+    }
+    tabletSizing = function(w, h, wh) {
+        // $(".contents").css("height", $(".contents").width() * (1617 / 960));
+        $(".fixed>ul").css("width", "800px");
+        $(".personData").css("width", w-100);
+    }
+    mobileSizing = function(w, h, wh) {
+        // $(".contents").css("height", $(".contents").width() * (1617 / 960));
+        $(".fixed>ul").css("width", "640px");
+        $(".personData").css("width", w);
+    }
+    commonSizing(w, h, wh);
+    if (w > 1200) {
+        pcSizing(w, h, wh);
+    } else if (w > 940) {
+        tabletSizing(w, h, wh);
+    } else {
+        mobileSizing(w, h, wh);
+    }
+    window.onresize = function(event) {
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        var wh = w / (h * 1920 / 1080);
+        commonSizing(w, h, wh);
+        if (w > 1200) {
+            pcSizing(w, h, wh);
+        } else if (w > 940) {
+            tabletSizing(w, h, wh);
+        } else {
+            mobileSizing(w, h, wh);
+        }
+    };
+}
 
 
 // 메뉴 클릭 시 이동 이벤트
@@ -73,6 +110,8 @@ scrollEvent = function() {
             $('.fixed li').css("font-size", "0.9rem");
             $('.fixed li').css("letter-spacing", "4px");
             $('.fixed li').css("line-height", "80px");
+            $('.fixed li div').css("top", "20px");
+            $('.fixed li div').css("border-right", "1px solid #fff");
         } else {
             $('.bg_trans').removeClass('show');
             $('.fixed').css("height", "100px");
@@ -81,55 +120,10 @@ scrollEvent = function() {
             $('.fixed li').css("font-size", "1.1rem");
             $('.fixed li').css("letter-spacing", "3px");
             $('.fixed li').css("line-height", "100px");
+            $('.fixed li div').css("top", "30px");
+            $('.fixed li div').css("border-right", "1px solid #000");
         };
     });
-}
-
-
-// 요소 사이즈 정의
-sizeJustify = function() {
-    var w = window.innerWidth;
-    var h = window.innerHeight;
-    // var h = window.innerHeight;
-    var wh = w / (h * 1920 / 1080);
-    commonSizing = function(w, h, wh) {
-        $(".poster").css("height", $(".poster").width() * (2715 / 1920));
-        $(".map").css("height", $(".map").width());
-        $(".ticket").css("height", $(".ticket").width() * (1181 / 3307));
-    }
-    pcSizing = function(w, h, wh) {
-        $(".fixed>ul").css("width", "800px");
-        $(".personData").css("width", w-100);
-    }
-    tabletSizing = function(w, h, wh) {
-        $(".fixed>ul").css("width", "800px");
-        $(".personData").css("width", w-100);
-    }
-    mobileSizing = function(w, h, wh) {
-        $(".fixed>ul").css("width", "640px");
-        $(".personData").css("width", w);
-    }
-    commonSizing(w, h, wh);
-    if (w > 1200) {
-        pcSizing(w, h, wh);
-    } else if (w > 940) {
-        tabletSizing(w, h, wh);
-    } else {
-        mobileSizing(w, h, wh);
-    }
-    window.onresize = function(event) {
-        var w = window.innerWidth;
-        var h = window.innerHeight;
-        var wh = w / (h * 1920 / 1080);
-        commonSizing(w, h, wh);
-        if (w > 1200) {
-            pcSizing(w, h, wh);
-        } else if (w > 940) {
-            tabletSizing(w, h, wh);
-        } else {
-            mobileSizing(w, h, wh);
-        }
-    };
 }
 
 
@@ -199,7 +193,47 @@ focusEvent = function() {
 
 // 영상 강제 재생 코드
 videoPlay = function() {
-    $(window).load(function(){
-        $(".video1").play();
+    $(".video1").get(0).play();
+}
+
+
+var a = [
+    'url("assets/img/poster1.png")',
+    'url("assets/img/poster2.png")',
+    'url("assets/img/poster3.png")',
+]
+var count = 0;
+
+
+// 이미지 전환 이벤트 정의
+imageChange = function() {
+    setInterval(function() {
+        // increase the 500 to larger values to lengthen the duration of the fadeout 
+           // and/or fadein
+        $('.poster').fadeOut(500, function() {
+            $('.poster').css('background-image', a[count]);
+            $('.poster').fadeIn(500);
+        });
+        count += 1;
+        if (count == 3) {
+            count = 0;
+        }
+    }, 2500);
+}
+
+apply = function() {
+    $(".apply").click(function() {
+        $('.apply').fadeOut(500, function() {
+            $("input").val("");
+            $(".apply").text("Submitted");
+            $('.apply').fadeIn(500);
+        });
     });
 }
+
+    // 비디오 이벤트 정의
+    // $('video').each(function() {
+    //     $(this).on('ended',function(){
+    //         $(this).remove();
+    //     });
+    // });

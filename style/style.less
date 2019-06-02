@@ -22,6 +22,7 @@
   padding: 0px;
   box-sizing: inherit;
   text-decoration: none;
+  font-family: 'Trebuchet Ms';
 }
 // animation
 .show {
@@ -69,6 +70,15 @@ nav {
         color: #000;
         transition: all 0.5s ease;
         cursor: pointer;
+        div {
+          position: absolute;
+          opacity: 0.7;
+          top: 30px;
+          height: 40px;
+          width: 160px;
+          border-right: 1px solid @color1;
+          transition: all 0.5s ease;
+        }
       }
     }
     .bg_trans {
@@ -97,9 +107,11 @@ main {
     // VIDEO
     &:nth-child(1) {
       video {
-        position: relative;
+        position: absolute;
         z-index: 1;
         display: block;
+        top: 0;
+        width: 100%;
       }
       .darken {
         position: absolute;
@@ -112,18 +124,27 @@ main {
       }
       .contentsContainer {
         position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         z-index: 3;
         width: 100%;
         height: 100%;
         top: 0;
         .contents {
-          position: relative;
-          width: 100%;
+          display: none;
           height: 100%;
-          max-width: 640px;
           background-image: url("../assets/img/second.png");
+          background-size: cover;
+          background-repeat: no-repeat;
           margin: 0 auto;
-          opacity: 0.75;
+          opacity: 0.9;
+          @media @tablet {
+            display: block;
+          }
+          @media @desktop {
+            display: block;
+          }
         }
       }
     }
@@ -217,7 +238,7 @@ main {
             .poster {
               width: 100%;
               height: 100%;
-              background-image: url("../assets/img/poster1.jpg");
+              background-image: url("../assets/img/poster1.png");
               background-size: cover;
               box-shadow: 0 0 10px #000;
             }
@@ -250,14 +271,18 @@ main {
             }
             * {
               margin-bottom: 2rem;
-              text-align: justify;
             }
             h1 {
               font-size: 2.5rem;
+              padding-bottom: 5px;
+              border-bottom: 3px solid @color9;
             }
             p {
-              font-size: 1.3rem;
-              text-indent: 2rem;
+              font-size: 1.1rem;
+              line-height: 2rem;
+              font-family: 'Open Sans', sans-serif;
+              font-weight: 100;
+              text-align: justify;
             }
           }
         }
@@ -268,50 +293,37 @@ main {
       background-image: linear-gradient( 135deg, @color5 10%, @color9 100%);
       .container {
         width: 100%;
+        max-width: 1200px;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         align-items: flex-start;
         justify-content: center;
         margin-bottom: 30px;
+        margin: 0 auto;
         .introduction {
           width: 100%;
           text-align: center;
           padding: 30px 0 0 0;
           color: @color1;
           h1 {
-            padding: 0 10px 5px 10px;
             overflow: hidden;
             position: relative;
             display: inline-block;
-            border: solid 5px @color2;
             font-size: 3rem;
+            padding-bottom: 5px;
+            border-bottom: 3px solid @color1;
             @media @tablet {
               font-size: 4rem;
             }
           }
         }
         .person {
-          width: 150px;
-          height: 150px;
-          margin: 20px;
-          cursor: pointer;
-          &:before {
-            content:"";
-            z-index: 1;
-            opacity: 0;
-            position: absolute;
-            background-color: #fff;
-            border-radius: 10%;
-            height: 150px;
-            width: 150px;
-            box-shadow: 0 0 15px #fff;
-            transition: 0.3s ease;
-          }
-          &:hover {
-            &:before {
-              opacity: 0.3;
-            }
+          width: 580px;
+          margin: 10px 10px;
+          @media @tablet {
+            width: 600px;
+            margin: 30px 0 0 0;
           }
           // Image insert
           &:nth-child(2) {
@@ -320,7 +332,7 @@ main {
                 background-image: url(../assets/img/person/person01.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com01.png);
+                background-image: url(../assets/img/companyLogo/com01.PNG);
               }
             }
           }
@@ -330,7 +342,7 @@ main {
                 background-image: url(../assets/img/person/person02.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com02.png);
+                background-image: url(../assets/img/companyLogo/com02.PNG);
               }
             }
           }
@@ -340,7 +352,7 @@ main {
                 background-image: url(../assets/img/person/person03.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com03.png);
+                background-image: url(../assets/img/companyLogo/com03.PNG);
               }
             }
           }
@@ -350,7 +362,7 @@ main {
                 background-image: url(../assets/img/person/person04.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com04.png);
+                background-image: url(../assets/img/companyLogo/com04.PNG);
               }
             }
           }
@@ -360,7 +372,7 @@ main {
                 background-image: url(../assets/img/person/person05.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com05.png);
+                background-image: url(../assets/img/companyLogo/com05.PNG);
               }
             }
           }
@@ -370,7 +382,7 @@ main {
                 background-image: url(../assets/img/person/person06.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com06.png);
+                background-image: url(../assets/img/companyLogo/com06.PNG);
               }
             }
           }
@@ -380,7 +392,7 @@ main {
                 background-image: url(../assets/img/person/person07.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com07.png);
+                background-image: url(../assets/img/companyLogo/com07.PNG);
               }
             }
           }
@@ -390,7 +402,7 @@ main {
                 background-image: url(../assets/img/person/person08.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com08.png);
+                background-image: url(../assets/img/companyLogo/com08.PNG);
               }
             }
           }
@@ -400,7 +412,7 @@ main {
                 background-image: url(../assets/img/person/person09.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com09.png);
+                background-image: url(../assets/img/companyLogo/com09.PNG);
               }
             }
           }
@@ -410,154 +422,164 @@ main {
                 background-image: url(../assets/img/person/person10.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com10.png);
+                background-image: url(../assets/img/companyLogo/com10.PNG);
               }
             }
           }
           &:nth-child(12) {
             div {
               &.personPicture {
-                background-image: url(../assets/img/person/person01.jpg);
+                background-image: url(../assets/img/person/person11.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com01.png);
+                background-image: url(../assets/img/companyLogo/com11.PNG);
               }
             }
           }
           &:nth-child(13) {
             div {
               &.personPicture {
-                background-image: url(../assets/img/person/person02.jpg);
+                background-image: url(../assets/img/person/person12.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com02.png);
+                background-image: url(../assets/img/companyLogo/com12.PNG);
               }
             }
           }
           &:nth-child(14) {
             div {
               &.personPicture {
-                background-image: url(../assets/img/person/person03.jpg);
+                background-image: url(../assets/img/person/person13.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com03.png);
+                background-image: url(../assets/img/companyLogo/com13.PNG);
               }
             }
           }
           &:nth-child(15) {
             div {
               &.personPicture {
-                background-image: url(../assets/img/person/person04.jpg);
+                background-image: url(../assets/img/person/person14.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com04.png);
+                background-image: url(../assets/img/companyLogo/com14.PNG);
               }
             }
           }
           &:nth-child(16) {
             div {
               &.personPicture {
-                background-image: url(../assets/img/person/person05.jpg);
+                background-image: url(../assets/img/person/person15.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com05.png);
+                background-image: url(../assets/img/companyLogo/com15.PNG);
               }
             }
           }
           &:nth-child(17) {
             div {
               &.personPicture {
-                background-image: url(../assets/img/person/person06.jpg);
+                background-image: url(../assets/img/person/person16.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com06.png);
+                background-image: url(../assets/img/companyLogo/com16.PNG);
               }
             }
           }
           &:nth-child(18) {
             div {
               &.personPicture {
-                background-image: url(../assets/img/person/person07.jpg);
+                background-image: url(../assets/img/person/person17.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com07.png);
+                background-image: url(../assets/img/companyLogo/com17.PNG);
               }
             }
           }
           &:nth-child(19) {
             div {
               &.personPicture {
-                background-image: url(../assets/img/person/person08.jpg);
+                background-image: url(../assets/img/person/person18.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com08.png);
+                background-image: url(../assets/img/companyLogo/com18.PNG);
               }
             }
           }
           &:nth-child(20) {
             div {
               &.personPicture {
-                background-image: url(../assets/img/person/person09.jpg);
+                background-image: url(../assets/img/person/person19.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com09.png);
+                background-image: url(../assets/img/companyLogo/com19.PNG);
               }
             }
           }
           &:nth-child(21) {
             div {
               &.personPicture {
-                background-image: url(../assets/img/person/person10.jpg);
+                background-image: url(../assets/img/person/person20.jpg);
               }
               &.companyLogo {
-                background-image: url(../assets/img/companyLogo/com10.png);
+                background-image: url(../assets/img/companyLogo/com20.PNG);
               }
+            }
+            margin-bottom: 50px;
+          }
+          .personPictureRoom {
+            float: left;
+            margin: 15px 10px 0 0;
+            width: 100px;
+            height: 100px;
+            border: solid 2px @color2;
+            .personPicture {
+              background-size: cover;
+              background-repeat: no-repeat;
+              border: none;
+              width: 80%;
+              height: 80%;
+              padding: 10%;
             }
           }
-          div {
-            border-radius: 50%;
-            background-size: cover;
-            background-repeat: no-repeat;
+          .contents {
+            width: 420px;
             float: left;
-            &.personPictureRoom {
-              margin: 20px 5px 15px 0;
-              width: 50px;
-              height: 50px;
-              border: solid 2px @color3;
-              .personPicture {
-                border: none;
-                width: 80%;
-                height: 80%;
-                padding: 10%;
-              }
-            }
-            &.companyLogoRoom {
-              width: 70px;
-              height: 70px;
-              border: solid 2px @color2;
-              .companyLogo {
-                border: none;
-                width: 80%;
-                height: 80%;
-                padding: 10%;
-              }
-            }
+            
           }
           p {
             clear: both;
-            font-size: 0.8rem;
-            line-height: 0.8rem;
+            font-size: 1rem;
+            line-height: 1.2rem;
             margin-bottom: 0.3rem;
             text-align: left;
             &.name {
+              display: inline-block;
               font-weight: bold;
+              font-size: 1.2rem;
+              padding-bottom: 0.2rem;
+              margin-bottom: 0.2rem;
+              border-bottom: 2px solid @color1;
             }
             &.job {
+              line-height: 1.2rem;
             }
             &.department {
+              line-height: 1.2rem;
             }
             &.company {
+              // display: inline-block;
+              line-height: 1.2rem;
+              padding-bottom: 0.6rem;
+              margin-bottom: 0.1rem;
+              border-bottom: 1px solid @color2;
+            }
+            &.explanation {
+              font-family: 'Open Sans', sans-serif;
               font-weight: bold;
+              font-size: 0.8rem;
+              line-height: 1.1rem;
+              text-align:justify;
             }
           }
         }
@@ -685,12 +707,16 @@ main {
               text-align: left;
             }
             h1 {
-              font-size: 2.5rem;
+              font-size: 2.1rem;
               margin-bottom: 2rem;
+              padding-bottom: 5px;
+              border-bottom: 3px solid @color9;
             }
             p {
-              font-size: 1.3rem;
+              font-size: 1.1rem;
               margin-bottom: 0.85rem;
+              font-family: 'Open Sans', sans-serif;
+              font-weight: 100;
             }
           }
         }
@@ -711,6 +737,8 @@ main {
           font-size: 3rem;
           display: inline-block;
           margin: 0 auto;
+          padding-bottom: 5px;
+          border-bottom: 3px solid @color1;
         }
         .logo {
           display: inline-block;
@@ -722,15 +750,18 @@ main {
         }
         .contents {
           font-size: 1.4rem;
-          font-weight: 300;
           display: inline-block;
           margin: 0 auto;
+          font-family: 'Open Sans', sans-serif;
+          font-style: italic;
+          font-weight: 100;
         }
         .author {
           font-size: 1.4rem;
-          font-weight: 300;
           display: inline-block;
           margin: 20px auto 20px auto;
+          font-family: 'Open Sans', sans-serif;
+          font-weight: bold;
         }
         .dot {
           font-size: 1rem;
@@ -755,6 +786,8 @@ main {
           font-size: 2.4rem;
           display: inline-block;
           margin: 20px auto 50px auto;
+          padding-bottom: 5px;
+          border-bottom: 3px solid @color9;
           @media @tablet {
             font-size: 3rem;
           }
@@ -764,21 +797,22 @@ main {
           font-weight: 200;
           display: flex;
           margin: 15px auto;
-          transition: 0.6s ease;
+          transition: 0.15s ease;
           input {
             width: 400px;
             background-color: rgba(0, 0, 0, 0);
             border: none;
             border-bottom: solid 2px @color9;
-            transition: 0.6s ease;
+            transition: 0.15s ease;
             color: @color9;
             &:focus {
               border-bottom: solid 1px @color9;
+              font-size: 1.2rem;
             }
           }
           p {
             flex: 1;
-            transition: 0.6s ease;
+            transition: 0.15s ease;
             &:nth-child(1) {
               min-width: 120px;
             }
@@ -792,21 +826,22 @@ main {
           font-weight: 200;
           display: flex;
           margin: 15px auto;
-          transition: 0.6s ease;
+          transition: 0.15s ease;
           input {
             width: 400px;
             background-color: rgba(0, 0, 0, 0);
             border: none;
             border-bottom: solid 2px @color9;
-            transition: 0.6s ease;
+            transition: 0.15s ease;
             color: @color9;
             &:focus {
               border-bottom: solid 1px @color9;
+              font-size: 1.2rem;
             }
           }
           p {
             flex: 1;
-            transition: 0.6s ease;
+            transition: 0.15s ease;
             &:nth-child(1) {
               min-width: 120px;
             }
@@ -820,21 +855,22 @@ main {
           font-weight: 200;
           display: flex;
           margin: 15px auto;
-          transition: 0.6s ease;
+          transition: 0.15s ease;
           input {
             width: 400px;
             background-color: rgba(0, 0, 0, 0);
             border: none;
             border-bottom: solid 2px @color9;
-            transition: 0.6s ease;
+            transition: 0.15s ease;
             color: @color9;
             &:focus {
               border-bottom: solid 1px @color9;
+              font-size: 1.2rem;
             }
           }
           p {
             flex: 1;
-            transition: 0.6s ease;
+            transition: 0.15s ease;
             &:nth-child(1) {
               min-width: 120px;
             }
@@ -848,21 +884,22 @@ main {
           font-weight: 200;
           display: flex;
           margin: 15px auto;
-          transition: 0.6s ease;
+          transition: 0.15s ease;
           input {
             width: 400px;
             background-color: rgba(0, 0, 0, 0);
             border: none;
             border-bottom: solid 2px @color9;
-            transition: 0.6s ease;
+            transition: 0.15s ease;
             color: @color9;
             &:focus {
               border-bottom: solid 1px @color9;
+              font-size: 1.2rem;
             }
           }
           p {
             flex: 1;
-            transition: 0.6s ease;
+            transition: 0.15s ease;
             &:nth-child(1) {
               min-width: 120px;
             }
@@ -888,91 +925,21 @@ main {
     }
   }
   .up {
-    text-align: center;
-    height: 300px;
-    line-height: 300px;
-    font-size: 4rem;
-    color: #bdbdbd;
-    font-weight: bold;
-    text-decoration: none;
-    letter-spacing: 5px;
-    text-shadow: 1px 1px 1px #949494;
-    position: relative;
-    z-index: 1;
-    margin: 0 auto;
-    display: block;
-    background-color: rgb(0, 0, 0);
-    &:hover {
-      color: #a6a6a6;
-      text-shadow: 1px 1px 1px #C9C9C9;
-    }
-  }
-  .personData {
     position: fixed;
-    z-index: 500;
-    top: 150px;
-    height: 400px;
+    width: 4rem;
+    height: 4rem;
+    right: 2rem;
+    bottom: 2rem;
+    opacity: 0.7;
+    border-radius: 50%;
+    background-image: url("../assets/img/top.png");
+    background-size: contain;
     transition: 0.3s ease;
-    margin: 0;
-    @media @tablet {
-      margin: 0 50px;
-      height: 500px;
-    }
-    @media @desktop {
-      margin: 0 50px;
-      height: 600px;
-    }
-    .back {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.8;
-      background-color: @color2;
-      box-shadow: 0 0 30px @color1;
-      transition: 0.3s ease;
-    }
-    .cancel {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      width: 30px;
-      height: 30px;
-      font-size: 2rem;
-      transition: 0.5s ease;
-      line-height: 2rem;
-      cursor: pointer;
-      &:hover {
-        background-color: @color2;
-      }
-    }
-    .container {
-      position: absolute;
-      width: 95%;
-      height: 95%;
-      margin: 2.5%;
-      .main {
-        color: @color9;
-        .title {
-          font-size: 3rem;
-          text-align: center;
-
-        }
-        .person{
-          width: 150px;
-          height: 150px;
-          border-radius: 10%;
-          background-image: url(../assets/img/person/person01.jpg);
-          background-size: cover;
-        }
-        .company{
-          width: 150px;
-          height: 150px;
-          border-radius: 10%;
-          background-image: url(../assets/img/companyLogo/com01.PNG);
-          background-size: cover;
-        }
-      }
+    box-shadow: 0 0 0.5rem @color2;
+    z-index: 9999;
+    &:hover {
+      opacity: 1;
+      box-shadow: 0 0 1rem @color1;
     }
   }
 }

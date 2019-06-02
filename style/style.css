@@ -3,6 +3,7 @@
   padding: 0px;
   box-sizing: inherit;
   text-decoration: none;
+  font-family: 'Trebuchet Ms';
 }
 .show {
   opacity: 0.4 !important;
@@ -52,6 +53,15 @@ nav .fixed ul li {
   transition: all 0.5s ease;
   cursor: pointer;
 }
+nav .fixed ul li div {
+  position: absolute;
+  opacity: 0.7;
+  top: 30px;
+  height: 40px;
+  width: 160px;
+  border-right: 1px solid #000000;
+  transition: all 0.5s ease;
+}
 nav .fixed .bg_trans {
   position: absolute;
   top: 0;
@@ -75,9 +85,11 @@ main > div {
   overflow: hidden;
 }
 main > div:nth-child(1) video {
-  position: relative;
+  position: absolute;
   z-index: 1;
   display: block;
+  top: 0;
+  width: 100%;
 }
 main > div:nth-child(1) .darken {
   position: absolute;
@@ -90,19 +102,32 @@ main > div:nth-child(1) .darken {
 }
 main > div:nth-child(1) .contentsContainer {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 3;
   width: 100%;
   height: 100%;
   top: 0;
 }
 main > div:nth-child(1) .contentsContainer .contents {
-  position: relative;
-  width: 100%;
+  display: none;
   height: 100%;
-  max-width: 640px;
   background-image: url("../assets/img/second.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   margin: 0 auto;
-  opacity: 0.75;
+  opacity: 0.9;
+}
+@media screen and (min-width: 940px) {
+  main > div:nth-child(1) .contentsContainer .contents {
+    display: block;
+  }
+}
+@media screen and (min-width: 1200px) {
+  main > div:nth-child(1) .contentsContainer .contents {
+    display: block;
+  }
 }
 main > div:nth-child(2) {
   background-image: linear-gradient(135deg, #1d1d1d 10%, #3d3d3d 100%);
@@ -267,7 +292,7 @@ main > div:nth-child(2) .container .posterBox .posterRoom {
 main > div:nth-child(2) .container .posterBox .posterRoom .poster {
   width: 100%;
   height: 100%;
-  background-image: url("../assets/img/poster1.jpg");
+  background-image: url("../assets/img/poster1.png");
   background-size: cover;
   box-shadow: 0 0 10px #000;
 }
@@ -308,26 +333,32 @@ main > div:nth-child(2) .container .contentsContainer .contents {
 }
 main > div:nth-child(2) .container .contentsContainer .contents * {
   margin-bottom: 2rem;
-  text-align: justify;
 }
 main > div:nth-child(2) .container .contentsContainer .contents h1 {
   font-size: 2.5rem;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #ffffff;
 }
 main > div:nth-child(2) .container .contentsContainer .contents p {
-  font-size: 1.3rem;
-  text-indent: 2rem;
+  font-size: 1.1rem;
+  line-height: 2rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  text-align: justify;
 }
 main > div:nth-child(3) {
   background-image: linear-gradient(135deg, #979797 10%, #ffffff 100%);
 }
 main > div:nth-child(3) .container {
   width: 100%;
+  max-width: 1200px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
   margin-bottom: 30px;
+  margin: 0 auto;
 }
 main > div:nth-child(3) .container .introduction {
   width: 100%;
@@ -336,12 +367,12 @@ main > div:nth-child(3) .container .introduction {
   color: #000000;
 }
 main > div:nth-child(3) .container .introduction h1 {
-  padding: 0 10px 5px 10px;
   overflow: hidden;
   position: relative;
   display: inline-block;
-  border: solid 5px #1d1d1d;
   font-size: 3rem;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #000000;
 }
 @media screen and (min-width: 940px) {
   main > div:nth-child(3) .container .introduction h1 {
@@ -349,187 +380,190 @@ main > div:nth-child(3) .container .introduction h1 {
   }
 }
 main > div:nth-child(3) .container .person {
-  width: 150px;
-  height: 150px;
-  margin: 20px;
-  cursor: pointer;
+  width: 580px;
+  margin: 10px 10px;
 }
-main > div:nth-child(3) .container .person:before {
-  content: "";
-  z-index: 1;
-  opacity: 0;
-  position: absolute;
-  background-color: #fff;
-  border-radius: 10%;
-  height: 150px;
-  width: 150px;
-  box-shadow: 0 0 15px #fff;
-  transition: 0.3s ease;
-}
-main > div:nth-child(3) .container .person:hover:before {
-  opacity: 0.3;
+@media screen and (min-width: 940px) {
+  main > div:nth-child(3) .container .person {
+    width: 600px;
+    margin: 30px 0 0 0;
+  }
 }
 main > div:nth-child(3) .container .person:nth-child(2) div.personPicture {
   background-image: url(../assets/img/person/person01.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(2) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com01.png);
+  background-image: url(../assets/img/companyLogo/com01.PNG);
 }
 main > div:nth-child(3) .container .person:nth-child(3) div.personPicture {
   background-image: url(../assets/img/person/person02.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(3) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com02.png);
+  background-image: url(../assets/img/companyLogo/com02.PNG);
 }
 main > div:nth-child(3) .container .person:nth-child(4) div.personPicture {
   background-image: url(../assets/img/person/person03.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(4) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com03.png);
+  background-image: url(../assets/img/companyLogo/com03.PNG);
 }
 main > div:nth-child(3) .container .person:nth-child(5) div.personPicture {
   background-image: url(../assets/img/person/person04.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(5) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com04.png);
+  background-image: url(../assets/img/companyLogo/com04.PNG);
 }
 main > div:nth-child(3) .container .person:nth-child(6) div.personPicture {
   background-image: url(../assets/img/person/person05.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(6) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com05.png);
+  background-image: url(../assets/img/companyLogo/com05.PNG);
 }
 main > div:nth-child(3) .container .person:nth-child(7) div.personPicture {
   background-image: url(../assets/img/person/person06.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(7) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com06.png);
+  background-image: url(../assets/img/companyLogo/com06.PNG);
 }
 main > div:nth-child(3) .container .person:nth-child(8) div.personPicture {
   background-image: url(../assets/img/person/person07.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(8) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com07.png);
+  background-image: url(../assets/img/companyLogo/com07.PNG);
 }
 main > div:nth-child(3) .container .person:nth-child(9) div.personPicture {
   background-image: url(../assets/img/person/person08.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(9) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com08.png);
+  background-image: url(../assets/img/companyLogo/com08.PNG);
 }
 main > div:nth-child(3) .container .person:nth-child(10) div.personPicture {
   background-image: url(../assets/img/person/person09.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(10) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com09.png);
+  background-image: url(../assets/img/companyLogo/com09.PNG);
 }
 main > div:nth-child(3) .container .person:nth-child(11) div.personPicture {
   background-image: url(../assets/img/person/person10.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(11) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com10.png);
+  background-image: url(../assets/img/companyLogo/com10.PNG);
 }
 main > div:nth-child(3) .container .person:nth-child(12) div.personPicture {
-  background-image: url(../assets/img/person/person01.jpg);
+  background-image: url(../assets/img/person/person11.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(12) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com01.png);
+  background-image: url(../assets/img/companyLogo/com11.PNG);
 }
 main > div:nth-child(3) .container .person:nth-child(13) div.personPicture {
-  background-image: url(../assets/img/person/person02.jpg);
+  background-image: url(../assets/img/person/person12.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(13) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com02.png);
+  background-image: url(../assets/img/companyLogo/com12.PNG);
 }
 main > div:nth-child(3) .container .person:nth-child(14) div.personPicture {
-  background-image: url(../assets/img/person/person03.jpg);
+  background-image: url(../assets/img/person/person13.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(14) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com03.png);
+  background-image: url(../assets/img/companyLogo/com13.PNG);
 }
 main > div:nth-child(3) .container .person:nth-child(15) div.personPicture {
-  background-image: url(../assets/img/person/person04.jpg);
+  background-image: url(../assets/img/person/person14.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(15) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com04.png);
+  background-image: url(../assets/img/companyLogo/com14.PNG);
 }
 main > div:nth-child(3) .container .person:nth-child(16) div.personPicture {
-  background-image: url(../assets/img/person/person05.jpg);
+  background-image: url(../assets/img/person/person15.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(16) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com05.png);
+  background-image: url(../assets/img/companyLogo/com15.PNG);
 }
 main > div:nth-child(3) .container .person:nth-child(17) div.personPicture {
-  background-image: url(../assets/img/person/person06.jpg);
+  background-image: url(../assets/img/person/person16.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(17) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com06.png);
+  background-image: url(../assets/img/companyLogo/com16.PNG);
 }
 main > div:nth-child(3) .container .person:nth-child(18) div.personPicture {
-  background-image: url(../assets/img/person/person07.jpg);
+  background-image: url(../assets/img/person/person17.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(18) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com07.png);
+  background-image: url(../assets/img/companyLogo/com17.PNG);
 }
 main > div:nth-child(3) .container .person:nth-child(19) div.personPicture {
-  background-image: url(../assets/img/person/person08.jpg);
+  background-image: url(../assets/img/person/person18.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(19) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com08.png);
+  background-image: url(../assets/img/companyLogo/com18.PNG);
 }
 main > div:nth-child(3) .container .person:nth-child(20) div.personPicture {
-  background-image: url(../assets/img/person/person09.jpg);
+  background-image: url(../assets/img/person/person19.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(20) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com09.png);
+  background-image: url(../assets/img/companyLogo/com19.PNG);
+}
+main > div:nth-child(3) .container .person:nth-child(21) {
+  margin-bottom: 50px;
 }
 main > div:nth-child(3) .container .person:nth-child(21) div.personPicture {
-  background-image: url(../assets/img/person/person10.jpg);
+  background-image: url(../assets/img/person/person20.jpg);
 }
 main > div:nth-child(3) .container .person:nth-child(21) div.companyLogo {
-  background-image: url(../assets/img/companyLogo/com10.png);
+  background-image: url(../assets/img/companyLogo/com20.PNG);
 }
-main > div:nth-child(3) .container .person div {
-  border-radius: 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
+main > div:nth-child(3) .container .person .personPictureRoom {
   float: left;
-}
-main > div:nth-child(3) .container .person div.personPictureRoom {
-  margin: 20px 5px 15px 0;
-  width: 50px;
-  height: 50px;
-  border: solid 2px #3d3d3d;
-}
-main > div:nth-child(3) .container .person div.personPictureRoom .personPicture {
-  border: none;
-  width: 80%;
-  height: 80%;
-  padding: 10%;
-}
-main > div:nth-child(3) .container .person div.companyLogoRoom {
-  width: 70px;
-  height: 70px;
+  margin: 15px 10px 0 0;
+  width: 100px;
+  height: 100px;
   border: solid 2px #1d1d1d;
 }
-main > div:nth-child(3) .container .person div.companyLogoRoom .companyLogo {
+main > div:nth-child(3) .container .person .personPictureRoom .personPicture {
+  background-size: cover;
+  background-repeat: no-repeat;
   border: none;
   width: 80%;
   height: 80%;
   padding: 10%;
+}
+main > div:nth-child(3) .container .person .contents {
+  width: 420px;
+  float: left;
 }
 main > div:nth-child(3) .container .person p {
   clear: both;
-  font-size: 0.8rem;
-  line-height: 0.8rem;
+  font-size: 1rem;
+  line-height: 1.2rem;
   margin-bottom: 0.3rem;
   text-align: left;
 }
 main > div:nth-child(3) .container .person p.name {
+  display: inline-block;
   font-weight: bold;
+  font-size: 1.2rem;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.2rem;
+  border-bottom: 2px solid #000000;
+}
+main > div:nth-child(3) .container .person p.job {
+  line-height: 1.2rem;
+}
+main > div:nth-child(3) .container .person p.department {
+  line-height: 1.2rem;
 }
 main > div:nth-child(3) .container .person p.company {
+  line-height: 1.2rem;
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.1rem;
+  border-bottom: 1px solid #1d1d1d;
+}
+main > div:nth-child(3) .container .person p.explanation {
+  font-family: 'Open Sans', sans-serif;
   font-weight: bold;
+  font-size: 0.8rem;
+  line-height: 1.1rem;
+  text-align: justify;
 }
 main > div:nth-child(4) {
   background-image: linear-gradient(135deg, #1d1d1d 10%, #3d3d3d 100%);
@@ -732,12 +766,16 @@ main > div:nth-child(4) .container .contentsContainer .contents * {
   text-align: left;
 }
 main > div:nth-child(4) .container .contentsContainer .contents h1 {
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   margin-bottom: 2rem;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #ffffff;
 }
 main > div:nth-child(4) .container .contentsContainer .contents p {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin-bottom: 0.85rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
 }
 main > div:nth-child(5) {
   background-image: linear-gradient(135deg, #979797 10%, #ffffff 100%);
@@ -755,6 +793,8 @@ main > div:nth-child(5) .container .title {
   font-size: 3rem;
   display: inline-block;
   margin: 0 auto;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #000000;
 }
 main > div:nth-child(5) .container .logo {
   display: inline-block;
@@ -766,15 +806,18 @@ main > div:nth-child(5) .container .logo {
 }
 main > div:nth-child(5) .container .contents {
   font-size: 1.4rem;
-  font-weight: 300;
   display: inline-block;
   margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+  font-style: italic;
+  font-weight: 100;
 }
 main > div:nth-child(5) .container .author {
   font-size: 1.4rem;
-  font-weight: 300;
   display: inline-block;
   margin: 20px auto 20px auto;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
 }
 main > div:nth-child(5) .container .dot {
   font-size: 1rem;
@@ -798,6 +841,8 @@ main > div:nth-child(6) .container .title {
   font-size: 2.4rem;
   display: inline-block;
   margin: 20px auto 50px auto;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #ffffff;
 }
 @media screen and (min-width: 940px) {
   main > div:nth-child(6) .container .title {
@@ -809,22 +854,23 @@ main > div:nth-child(6) .container .name {
   font-weight: 200;
   display: flex;
   margin: 15px auto;
-  transition: 0.6s ease;
+  transition: 0.15s ease;
 }
 main > div:nth-child(6) .container .name input {
   width: 400px;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   border-bottom: solid 2px #ffffff;
-  transition: 0.6s ease;
+  transition: 0.15s ease;
   color: #ffffff;
 }
 main > div:nth-child(6) .container .name input:focus {
   border-bottom: solid 1px #ffffff;
+  font-size: 1.2rem;
 }
 main > div:nth-child(6) .container .name p {
   flex: 1;
-  transition: 0.6s ease;
+  transition: 0.15s ease;
 }
 main > div:nth-child(6) .container .name p:nth-child(1) {
   min-width: 120px;
@@ -837,22 +883,23 @@ main > div:nth-child(6) .container .email {
   font-weight: 200;
   display: flex;
   margin: 15px auto;
-  transition: 0.6s ease;
+  transition: 0.15s ease;
 }
 main > div:nth-child(6) .container .email input {
   width: 400px;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   border-bottom: solid 2px #ffffff;
-  transition: 0.6s ease;
+  transition: 0.15s ease;
   color: #ffffff;
 }
 main > div:nth-child(6) .container .email input:focus {
   border-bottom: solid 1px #ffffff;
+  font-size: 1.2rem;
 }
 main > div:nth-child(6) .container .email p {
   flex: 1;
-  transition: 0.6s ease;
+  transition: 0.15s ease;
 }
 main > div:nth-child(6) .container .email p:nth-child(1) {
   min-width: 120px;
@@ -865,22 +912,23 @@ main > div:nth-child(6) .container .phone {
   font-weight: 200;
   display: flex;
   margin: 15px auto;
-  transition: 0.6s ease;
+  transition: 0.15s ease;
 }
 main > div:nth-child(6) .container .phone input {
   width: 400px;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   border-bottom: solid 2px #ffffff;
-  transition: 0.6s ease;
+  transition: 0.15s ease;
   color: #ffffff;
 }
 main > div:nth-child(6) .container .phone input:focus {
   border-bottom: solid 1px #ffffff;
+  font-size: 1.2rem;
 }
 main > div:nth-child(6) .container .phone p {
   flex: 1;
-  transition: 0.6s ease;
+  transition: 0.15s ease;
 }
 main > div:nth-child(6) .container .phone p:nth-child(1) {
   min-width: 120px;
@@ -893,22 +941,23 @@ main > div:nth-child(6) .container .company {
   font-weight: 200;
   display: flex;
   margin: 15px auto;
-  transition: 0.6s ease;
+  transition: 0.15s ease;
 }
 main > div:nth-child(6) .container .company input {
   width: 400px;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   border-bottom: solid 2px #ffffff;
-  transition: 0.6s ease;
+  transition: 0.15s ease;
   color: #ffffff;
 }
 main > div:nth-child(6) .container .company input:focus {
   border-bottom: solid 1px #ffffff;
+  font-size: 1.2rem;
 }
 main > div:nth-child(6) .container .company p {
   flex: 1;
-  transition: 0.6s ease;
+  transition: 0.15s ease;
 }
 main > div:nth-child(6) .container .company p:nth-child(1) {
   min-width: 120px;
@@ -930,93 +979,20 @@ main > div:nth-child(6) .container .apply:hover {
   background-color: #1d1d1d;
 }
 main .up {
-  text-align: center;
-  height: 300px;
-  line-height: 300px;
-  font-size: 4rem;
-  color: #bdbdbd;
-  font-weight: bold;
-  text-decoration: none;
-  letter-spacing: 5px;
-  text-shadow: 1px 1px 1px #949494;
-  position: relative;
-  z-index: 1;
-  margin: 0 auto;
-  display: block;
-  background-color: #000000;
+  position: fixed;
+  width: 4rem;
+  height: 4rem;
+  right: 2rem;
+  bottom: 2rem;
+  opacity: 0.7;
+  border-radius: 50%;
+  background-image: url("../assets/img/top.png");
+  background-size: contain;
+  transition: 0.3s ease;
+  box-shadow: 0 0 0.5rem #1d1d1d;
+  z-index: 9999;
 }
 main .up:hover {
-  color: #a6a6a6;
-  text-shadow: 1px 1px 1px #C9C9C9;
-}
-main .personData {
-  position: fixed;
-  z-index: 500;
-  top: 150px;
-  height: 400px;
-  transition: 0.3s ease;
-  margin: 0;
-}
-@media screen and (min-width: 940px) {
-  main .personData {
-    margin: 0 50px;
-    height: 500px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  main .personData {
-    margin: 0 50px;
-    height: 600px;
-  }
-}
-main .personData .back {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.8;
-  background-color: #1d1d1d;
-  box-shadow: 0 0 30px #000000;
-  transition: 0.3s ease;
-}
-main .personData .cancel {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 30px;
-  height: 30px;
-  font-size: 2rem;
-  transition: 0.5s ease;
-  line-height: 2rem;
-  cursor: pointer;
-}
-main .personData .cancel:hover {
-  background-color: #1d1d1d;
-}
-main .personData .container {
-  position: absolute;
-  width: 95%;
-  height: 95%;
-  margin: 2.5%;
-}
-main .personData .container .main {
-  color: #ffffff;
-}
-main .personData .container .main .title {
-  font-size: 3rem;
-  text-align: center;
-}
-main .personData .container .main .person {
-  width: 150px;
-  height: 150px;
-  border-radius: 10%;
-  background-image: url(../assets/img/person/person01.jpg);
-  background-size: cover;
-}
-main .personData .container .main .company {
-  width: 150px;
-  height: 150px;
-  border-radius: 10%;
-  background-image: url(../assets/img/companyLogo/com01.PNG);
-  background-size: cover;
+  opacity: 1;
+  box-shadow: 0 0 1rem #000000;
 }
