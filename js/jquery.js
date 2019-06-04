@@ -26,12 +26,10 @@ sizeJustify = function() {
         $(".ticket").css("height", $(".ticket").width() * (1181 / 3307));
     }
     pcSizing = function(w, h, wh) {
-        $(".fixed>ul").css("width", "800px");
         $(".personData").css("width", w-100);
     }
     tabletSizing = function(w, h, wh) {
         // $(".contents").css("height", $(".contents").width() * (1617 / 960));
-        $(".fixed>ul").css("width", "800px");
         $(".personData").css("width", w-100);
     }
     mobileSizing = function(w, h, wh) {
