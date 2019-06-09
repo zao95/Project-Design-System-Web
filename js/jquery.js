@@ -108,8 +108,7 @@ scrollEvent = function() {
             $('.fixed li').css("font-size", "0.9rem");
             $('.fixed li').css("letter-spacing", "4px");
             $('.fixed li').css("line-height", "80px");
-            $('.fixed li div').css("top", "20px");
-            $('.fixed li div').css("border-right", "1px solid #fff");
+            $('.fixed li').css("filter", "brightness(100)");
         } else {
             $('.bg_trans').removeClass('show');
             $('.fixed').css("height", "100px");
@@ -118,8 +117,7 @@ scrollEvent = function() {
             $('.fixed li').css("font-size", "1.1rem");
             $('.fixed li').css("letter-spacing", "3px");
             $('.fixed li').css("line-height", "100px");
-            $('.fixed li div').css("top", "30px");
-            $('.fixed li div').css("border-right", "1px solid #000");
+            $('.fixed li').css("filter", "brightness(0)");
         };
     });
 }
